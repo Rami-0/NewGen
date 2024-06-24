@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+body {
+  cursor: none;
+}
+
+.box {
+  width: 10px;
+  height: 10px;
+  background-color: var(--emerald);
+  border-radius: 10px;
+  position: fixed; /* Ensure it stays in the same position relative to the viewport */
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Allow interactions to pass through */
+}
