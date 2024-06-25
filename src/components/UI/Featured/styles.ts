@@ -2,13 +2,15 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
-export const Wrapper = styled.section``;
+export const Wrapper = styled.section`
+    margin: 6.5rem 0;
+`;
 
 export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 6.25rem auto 0;
+  margin: 0 auto 0;
   max-width: 1440px;
   width: 90%;
 
@@ -17,7 +19,6 @@ export const Inner = styled.div`
     font-size: 1.25rem;
     font-weight: 500;
     text-transform: uppercase;
-    margin-top: 6.5rem;
   }
 
   @media (max-width: 768px) {

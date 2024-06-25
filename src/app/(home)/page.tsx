@@ -17,13 +17,13 @@ export default function Home() {
 		<StrictMode>
 			<main>
 				<HeroSection />
-				{/* <Featured /> */}
-				{/* <OffersSection />
-        <FinancilaFreedom />
-        <FinancialFuture />
-        <IntroSection />
-        <JoinSection /> */}
-				<FAQ />
+        <JoinSection />
+				<Featured />
+				{/* <OffersSection /> */}
+        {/* <FinancilaFreedom /> */}
+        {/* <FinancialFuture /> */}
+        {/* <IntroSection /> */}
+				{/* <FAQ /> */}
 				{!isMobile ? (
 					<motion.div
 						ref={ref}

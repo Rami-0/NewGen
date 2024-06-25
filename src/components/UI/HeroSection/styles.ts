@@ -3,11 +3,7 @@ import { styled } from 'styled-components';
 import hero_background from '../../../../public/images/grid_background.png';
 
 export const Wrapper = styled.section`
-	padding: 20rem 0 10rem;
-	@media (max-width: 768px) {
-		margin-left: 1.5rem;
-		margin-right: 1.5rem;
-	}
+	padding: 15rem 0 15rem;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -25,7 +21,6 @@ export const Inner = styled.div`
 	height: fit-content;
 	width: 90%;
 	max-width: 1440px;
-	margin: 0 auto;
 `;
 
 export const Pill = styled.div`

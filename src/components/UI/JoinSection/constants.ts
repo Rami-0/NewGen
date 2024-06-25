@@ -42,4 +42,4 @@ export const testimonials = [
   },
 ];
 
-export const desktopHeaderPhrase = ['Join over 3 million', 'members'];
+export const desktopHeaderPhrase = ['Who Are We?', ''];

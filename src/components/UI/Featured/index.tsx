@@ -26,7 +26,7 @@ const Featured = () => {
   return (
     <Wrapper>
       <Inner>
-        <ImageContainer>
+        {/* <ImageContainer>
           <RevealCover />
           <Div
             variants={imageVariants}
@@ -44,7 +44,7 @@ const Featured = () => {
               <Image src={big_banner} alt="big_banner" fill />
             )}
           </Div>
-        </ImageContainer>
+        </ImageContainer> */}
         <h2>Featured and Seen in</h2>
         <ParallaxImages>
           <ParallaxText baseVelocity={-4}>

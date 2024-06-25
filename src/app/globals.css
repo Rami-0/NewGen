@@ -5,9 +5,10 @@ body {
 }
 
 .box {
-  width: 10px;
-  height: 10px;
+  width: 32px;
+  height: 32px;
   background-color: var(--emerald);
+  border: 1px solid var(--Background);
   border-radius: 10px;
   position: fixed; /* Ensure it stays in the same position relative to the viewport */
   top: 0;
