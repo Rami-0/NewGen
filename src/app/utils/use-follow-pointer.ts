@@ -11,10 +11,12 @@ export function useFollowPointerWithVelocity(ref: RefObject<HTMLElement>) {
     if (!ref.current) return;
 
     const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
-      const element = ref.current!;
+      if (ref.current) {
+        const element = ref.current;
 
-      xPoint.set(clientX - element.offsetLeft - element.offsetWidth / 2);
-      yPoint.set(clientY - element.offsetTop - element.offsetHeight / 2);
+        xPoint.set(clientX - element.offsetLeft - element.offsetWidth / 2);
+        yPoint.set(clientY - element.offsetTop - element.offsetHeight / 2);
+      }
     };
 
     window.addEventListener("pointermove", handlePointerMove);

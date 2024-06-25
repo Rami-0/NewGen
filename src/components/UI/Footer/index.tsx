@@ -48,7 +48,7 @@ const Footer = () => {
         </FooterLogo>
         <FooterMainContent>
           <FooterMiddle>
-            <QRContainer>
+            {/* <QRContainer>
               <QRImageCtn>
                 <Image id='contact' src={qr_code} alt="qr_code" />
               </QRImageCtn>
@@ -59,7 +59,7 @@ const Footer = () => {
                   <Image src={ic_baseline_apple} alt="apple icon" />
                 </IconCtn>
               </TextCtn>
-            </QRContainer>
+            </QRContainer> */}
             <FooterNavigation>
               {linksArr.map((l, i) => (
                 <GridColumn key={i}>
@@ -80,7 +80,7 @@ const Footer = () => {
             </Translator>
             <CopyRight>
               <Image src={ic_copyright} alt="copyright svg" />
-              Raft Corp, LLC.
+              Nextgen, LLC.
             </CopyRight>
           </FooterBottom>
         </FooterMainContent>

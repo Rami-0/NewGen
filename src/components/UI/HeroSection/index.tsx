@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Wrapper, Inner, Pill, HeroTextContainer } from './styles';
 import ic_chevron_right from '../../../../public/svgs/ic_chevron_right.svg';
@@ -12,16 +12,21 @@ import { motion, useScroll } from 'framer-motion';
 
 const HeroSection = () => {
 	const isMobile = useIsMobile();
-  const { scrollY } = useScroll();
-	
+	const { scrollY } = useScroll();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
 	return (
-		<>
-			<Wrapper>
-				<Inner>
-					<Pill>
-						<span>Introducing nextGen</span>
-						<Image src={ic_chevron_right} alt='chevron-right' />
-					</Pill>
+		<Wrapper>
+			<Inner>
+				<Pill>
+					<span>Introducing nextGen</span>
+					<Image src={ic_chevron_right} alt='chevron-right' />
+				</Pill>
+				{mounted && (
 					<HeroTextContainer>
 						{isMobile ? (
 							<>
@@ -30,8 +35,8 @@ const HeroSection = () => {
 								<motion.div
 									style={{
 										position: 'absolute',
-										right: '-100px',
-										top: '30px',
+										right: '-80px',
+										top: '-30px',
 										width: 'fit-content',
 										rotate: scrollY
 									}}>
@@ -56,10 +61,10 @@ const HeroSection = () => {
 							</>
 						)}
 					</HeroTextContainer>
-					<GetStartedButton padding='1rem 2rem' />
-				</Inner>
-			</Wrapper>
-		</>
+				)}
+				<GetStartedButton padding='1rem 2rem' />
+			</Inner>
+		</Wrapper>
 	);
 };
 

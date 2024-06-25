@@ -40,7 +40,7 @@ export const FooterMainContent = styled.div`
 
 export const FooterMiddle = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
   gap: 2rem;
 
