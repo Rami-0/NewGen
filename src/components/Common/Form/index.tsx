@@ -12,7 +12,7 @@ const Form = () => {
 		description: '',
 	});
 
-	const handleChange = (e) => {
+	const handleChange = (e: any) => {
 		const { id, value } = e.target;
 		setFormData((prevData) => ({
 			...prevData,
@@ -20,7 +20,7 @@ const Form = () => {
 		}));
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: any) => {
 		e.preventDefault();
 		console.log('Form Submitted:', formData);
 		// You can add your form submission logic here
