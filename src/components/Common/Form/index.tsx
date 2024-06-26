@@ -1,8 +1,12 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, SyntheticEvent } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Wrapper, StyledForm } from './style';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import Alert, { AlertColor } from '@mui/material/Alert';
+import axios from 'axios';
+import zIndex from '@mui/material/styles/zIndex';
 
 const Form = () => {
 	const [formData, setFormData] = useState({
@@ -12,7 +16,11 @@ const Form = () => {
 		description: '',
 	});
 
-	const handleChange = (e: any) => {
+	const [message, setMessage] = useState('');
+	const [severity, setSeverity] = useState('success');
+	const [open, setOpen] = useState(false);
+
+	const handleChange = (e) => {
 		const { id, value } = e.target;
 		setFormData((prevData) => ({
 			...prevData,
@@ -20,10 +28,24 @@ const Form = () => {
 		}));
 	};
 
-	const handleSubmit = (e: any) => {
+	const handleSubmit = async (e: any) => {
 		e.preventDefault();
-		console.log('Form Submitted:', formData);
-		// You can add your form submission logic here
+		try {
+			const response = await axios.post('/api/send-email', formData);
+			setMessage(response.data.message);
+			setSeverity('success');
+		} catch (error) {
+			setMessage('Failed to send email. Please try again later.');
+			setSeverity('error');
+		}
+		setOpen(true);
+	};
+
+	const handleClose = (event: any, reason: any) => {
+		if (reason === 'clickaway') {
+			return;
+		}
+		setOpen(false);
 	};
 
 	const formVariants = {
@@ -72,13 +94,13 @@ const Form = () => {
 	};
 
 	const buttonStyles = {
-		backgroundColor: '#ccff00', // Neon yellow color
+		backgroundColor: 'var(--emerald)', // Neon yellow color
 		color: '#000', // Black text color
 		borderRadius: '30px', // Rounded corners
 		padding: '10px 20px', // Padding inside the button
 		textTransform: 'none', // Disable uppercase text transformation
 		'&:hover': {
-			backgroundColor: '#ccff00', // Same color on hover to maintain consistency
+			backgroundColor: 'var(--emerald)', // Same color on hover to maintain consistency
 		},
 	};
 
@@ -123,7 +145,13 @@ const Form = () => {
 					</motion.div>
 				</StyledForm>
 			</motion.div>
+			<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+				<Alert onClose={(event: SyntheticEvent<Element, Event>, reason?: string) => handleClose(event, reason)} severity={severity as AlertColor} sx={{ top: 0, width: '100%' }}>
+					{message}
+				</Alert>
+			</Snackbar>
 		</Wrapper>
 	);
 };
+
 export default Form;
