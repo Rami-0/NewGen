@@ -11,10 +11,10 @@ export const Inner = styled.main`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 3.75rem;
+  gap: 2rem;
 
   @media (max-width: 768px) {
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 `;
 
@@ -33,14 +33,14 @@ export const FooterLogo = styled.div`
 export const FooterMainContent = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3.75rem 0 3.25rem;
+  padding: 2.5rem 0 2.5rem;
   border-top: 0.0625rem solid #3d3d3d;
   gap: 3.25rem;
 `;
 
 export const FooterMiddle = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
   gap: 2rem;
 

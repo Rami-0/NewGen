@@ -5,6 +5,7 @@ import ic_google_playstore from '../../../../public/svgs/ic_google_playstore.svg
 import ic_baseline_apple from '../../../../public/svgs/ic_baseline_apple.svg';
 import ic_chevron_down from '../../../../public/svgs/ic_chevron_down.svg';
 import ic_copyright from '../../../../public/svgs/ic_copyright.svg';
+import { Form } from '@/components';
 
 const linksArr = [
   {
@@ -48,18 +49,7 @@ const Footer = () => {
         </FooterLogo>
         <FooterMainContent>
           <FooterMiddle>
-            {/* <QRContainer>
-              <QRImageCtn>
-                <Image id='contact' src={qr_code} alt="qr_code" />
-              </QRImageCtn>
-              <TextCtn>
-                <p>Scan to download App on the Playstore and Appstore.</p>
-                <IconCtn>
-                  <Image src={ic_google_playstore} alt="playstore icon" />
-                  <Image src={ic_baseline_apple} alt="apple icon" />
-                </IconCtn>
-              </TextCtn>
-            </QRContainer> */}
+            <Form />
             <FooterNavigation>
               {linksArr.map((l, i) => (
                 <GridColumn key={i}>

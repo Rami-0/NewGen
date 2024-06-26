@@ -1,9 +1,10 @@
 'use client';
 import { FAQ, Featured, FinancialFuture, FinancilaFreedom, HeroSection, IntroSection, JoinSection, OffersSection } from '@/components';
 import { useRef, StrictMode } from 'react';
-import { useFollowPointerWithVelocity } from '@/app/utils/use-follow-pointer';
+import { useFollowPointerWithVelocity } from '@/utils/use-follow-pointer';
 import { motion, useTransform } from 'framer-motion';
 import { useIsMobile } from '../../../libs/useIsMobile';
+
 
 export default function Home() {
 	const ref = useRef(null);
@@ -13,12 +14,16 @@ export default function Home() {
 	
 	const isMobile = useIsMobile();
 
+
+	
+
 	return (
 		<StrictMode>
 			<main>
 				<HeroSection />
         <JoinSection />
 				<Featured />
+				{/* <Form /> */}
 				{/* <OffersSection /> */}
         {/* <FinancilaFreedom /> */}
         {/* <FinancialFuture /> */}
