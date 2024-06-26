@@ -20,7 +20,7 @@ const Form = () => {
 	const [severity, setSeverity] = useState('success');
 	const [open, setOpen] = useState(false);
 
-	const handleChange = (e) => {
+	const handleChange = (e: any) => {
 		const { id, value } = e.target;
 		setFormData((prevData) => ({
 			...prevData,
