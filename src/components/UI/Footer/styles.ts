@@ -120,6 +120,7 @@ export const LinksContainer = styled.ul`
     font-weight: 400;
     cursor: pointer;
     position: relative;
+    width: fit-content;
 
     &::after {
       position: absolute;

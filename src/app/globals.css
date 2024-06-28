@@ -5,15 +5,10 @@ body {
 }
 
 .box {
-	width: 32px;
-	height: 32px;
-	background-color: var(--emerald);
-	border: 1px solid var(--Background);
-	border-radius: 10px;
-	position: fixed; /* Ensure it stays in the same position relative to the viewport */
-	top: 0;
-	left: 0;
-	pointer-events: none; /* Allow interactions to pass through */
+  position: fixed; /* Ensure it stays in the same position relative to the viewport */
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Allow interactions to pass through */
 }
 
 label:focus {

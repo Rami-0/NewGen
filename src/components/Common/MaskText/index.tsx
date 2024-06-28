@@ -12,13 +12,9 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
       y: '0%',
       transition: { duration: 1, delay: 0.1 * i, ease: [0.33, 1, 0.68, 1] },
     }),
-    close: (i: number) => ({
-      y: '-100%',
-      transition: { duration: 0.5, delay: 0.1 * i, ease: [0.33, 1, 0.68, 1] },
-    }),
   };
   const body = useRef(null);
-  const isInView = useInView(body, { margin: '-10%', amount: 0.4 });
+  const isInView = useInView(body, { once: true, margin: '-10%', amount: 0.4 });
   return (
     <Body ref={body}>
       {phrases.map((phrase, index) => {
@@ -28,7 +24,7 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
               <motion.h1
                 variants={animate}
                 initial="initial"
-                animate={isInView ? 'open' : 'close'}
+                animate={isInView ? 'open' : ''}
                 custom={index}
               >
                 {phrase}
@@ -37,7 +33,7 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
               <motion.h2
                 variants={animate}
                 initial="initial"
-                animate={isInView ? 'open' : 'close'}
+                animate={isInView ? 'open' : ''}
                 custom={index}
               >
                 {phrase}
@@ -46,7 +42,7 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
               <motion.h3
                 variants={animate}
                 initial="initial"
-                animate={isInView ? 'open' : 'close'}
+                animate={isInView ? 'open' : ''}
                 custom={index}
               >
                 {phrase}
@@ -55,7 +51,7 @@ const MaskText = ({ phrases, tag }: { phrases: string[]; tag: string }) => {
               <motion.p
                 variants={animate}
                 initial="initial"
-                animate={isInView ? 'open' : 'close'}
+                animate={isInView ? 'open' : ''}
                 custom={index}
               >
                 {phrase}

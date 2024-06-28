@@ -72,5 +72,14 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
 
   .complete {
+    display: block;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
   }
 `;
