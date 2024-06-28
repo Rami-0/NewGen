@@ -1,6 +1,7 @@
 'use client';
 import { Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import { buttonStyles } from './styles';
 
 const GetStartedButton = ({ padding }: { padding: string }) => {
   const handleClick = () => {
@@ -21,16 +22,7 @@ const GetStartedButton = ({ padding }: { padding: string }) => {
       <Button
         onClick={handleClick}
         variant="contained"
-        sx={{
-          backgroundColor: '#ccff00',
-          color: '#000',
-          borderRadius: '30px',
-          padding: padding,
-          textTransform: 'none',
-          '&:hover': {
-            backgroundColor: '#ccff00',
-          },
-        }}
+        sx={buttonStyles}
       >
         Reach Out
       </Button>

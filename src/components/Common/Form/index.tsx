@@ -105,8 +105,10 @@ const Form = () => {
 					<motion.div variants={formVariants} transition={{ duration: 0.5, delay: 0.4 }}>
 						<TextField id='description' label='Description' variant='standard' multiline rows={4} fullWidth value={formData.description} onChange={handleChange} required sx={textFieldStyles} InputLabelProps={inputLabelProps} />
 					</motion.div>
+					{/* Button & Captcha */}
+					{submissionCount > 0 && <Recaptcha onVerify={handleRecaptchaVerify} />}
 					<motion.div
-						style={{ width: 'fit-content' }}
+						style={{ width: 'fit-content', alignSelf: 'flex-end' }}
 						variants={formVariants}
 						whileHover={{ scale: 1.2 }}
 						whileTap={{
@@ -117,7 +119,6 @@ const Form = () => {
 							Reach Out
 						</Button>
 					</motion.div>
-					{submissionCount > 0 && <Recaptcha onVerify={handleRecaptchaVerify} />}
 				</StyledForm>
 			</motion.div>
 			<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
