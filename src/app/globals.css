@@ -13,6 +13,18 @@ body {
 	user-select: none;
 }
 
+.recaptcha-container {
+  display: flex;
+  justify-content: center; /* Center the reCAPTCHA horizontally */
+  align-items: center; /* Center the reCAPTCHA vertically */
+  width: 100%; /* Ensure the container takes full width */
+  padding: 10px; /* Optional: Add some padding around the reCAPTCHA */
+  background-color: #f0f0f0; /* Optional: Add a background color */
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: inset 0px 0px 10px var(--Background); /* Optional: Add a box shadow */
+}
+
+
 label:focus {
 	color: var(--emerald) !important;
 }
