@@ -49,7 +49,13 @@ export const textFieldStyles = {
   '& .MuiInputBase-input.MuiFilledInput-input': {
     backgroundColor: 'var(--background)',
   },
+  '& input:-webkit-autofill': {
+    WebkitBackgroundColor: 'var(--Background)',
+    WebkitBoxShadow: '0 0 0 1000px var(--background) inset',
+    WebkitTextFillColor: '#fff',
+  },
 };
+
 
 export const inputLabelProps = {
   sx: {

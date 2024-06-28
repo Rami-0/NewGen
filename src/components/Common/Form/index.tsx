@@ -101,7 +101,7 @@ const Form = () => {
 							<TextField id='email' label='Email' variant='standard' fullWidth value={formData.email} onChange={handleChange} required type='email' sx={textFieldStyles} InputLabelProps={inputLabelProps} />
 						</motion.div>
 						<motion.div variants={formVariants} transition={{ duration: 0.5, delay: 0.4 }}>
-							<TextField id='description' label='Description' variant='standard' multiline rows={4} fullWidth value={formData.description} onChange={handleChange} required sx={textFieldStyles} InputLabelProps={inputLabelProps} />
+							<TextField id='description' label='Tell us more about your idea!' variant='standard' multiline rows={4} fullWidth value={formData.description} onChange={handleChange} required sx={textFieldStyles} InputLabelProps={inputLabelProps} />
 						</motion.div>
 						<div className='recaptcha-container'>
 							<Recaptcha onVerify={handleRecaptchaVerify} />
