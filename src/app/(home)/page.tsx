@@ -1,5 +1,5 @@
 'use client';
-import { FAQ, Featured, FinancialFuture, FinancialFreedom, HeroSection, IntroSection, JoinSection, OffersSection } from '@/components';
+import { FAQ, Featured, FinancialFuture, FinancilaFreedom, HeroSection, IntroSection, JoinSection, OffersSection } from '@/components';
 import { useRef, StrictMode } from 'react';
 import { useFollowPointerWithVelocity } from '@/utils/use-follow-pointer';
 import { motion, useTransform } from 'framer-motion';

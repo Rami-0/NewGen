@@ -5,17 +5,27 @@ body {
 }
 
 .box {
-  position: fixed; /* Ensure it stays in the same position relative to the viewport */
-  top: 0;
-  left: 0;
-  pointer-events: none; /* Allow interactions to pass through */
+	position: fixed;
+	top: -50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
 }
 
 label:focus {
 	color: var(--emerald) !important;
 }
-
-
 .MuiFormLabel-root:focus {
-  color: var(--emerald) !important;
+	color: var(--emerald) !important;
+}
+
+/* Change the color of the text selection */
+::selection {
+	background: var(--emerald);
+	color: var(--Background);
+}
+/* For Firefox, use the same styles with the -moz- prefix */
+::-moz-selection {
+	background: var(--emerald);
+	color: var(--Background);
 }

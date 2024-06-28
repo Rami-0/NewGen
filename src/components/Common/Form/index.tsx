@@ -1,12 +1,12 @@
 import { useState, useRef, SyntheticEvent } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Wrapper, StyledForm } from './style';
+import { Wrapper, StyledForm, textFieldStyles, inputLabelProps, buttonStyles } from './style';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import Alert, { AlertColor } from '@mui/material/Alert';
 import axios from 'axios';
-import zIndex from '@mui/material/styles/zIndex';
+import Recaptcha from '@/utils/Recaptcha';
 
 const Form = () => {
 	const [formData, setFormData] = useState({
@@ -17,8 +17,10 @@ const Form = () => {
 	});
 
 	const [message, setMessage] = useState('');
-	const [severity, setSeverity] = useState('success');
+	const [severity, setSeverity] = useState<AlertColor>('success');
 	const [open, setOpen] = useState(false);
+	const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+	const [submissionCount, setSubmissionCount] = useState(0);
 
 	const handleChange = (e: any) => {
 		const { id, value } = e.target;
@@ -30,14 +32,30 @@ const Form = () => {
 
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
+
+		// If this is not the first submission, require reCAPTCHA validation
+		if (submissionCount > 0 && !recaptchaToken) {
+			setMessage('Please complete the reCAPTCHA.');
+			setSeverity('error');
+			setOpen(true);
+			return;
+		}
+
 		try {
-			const response = await axios.post('/api/send-email', formData);
+			const response = await axios.post('/api/send-email', {
+				...formData,
+				recaptchaToken: submissionCount > 0 ? recaptchaToken : null,
+			});
 			setMessage(response.data.message);
 			setSeverity('success');
 		} catch (error) {
 			setMessage('Failed to send email. Please try again later.');
 			setSeverity('error');
 		}
+
+		// Increment the submission count and reset reCAPTCHA
+		setSubmissionCount(submissionCount + 1);
+		setRecaptchaToken(null);
 		setOpen(true);
 	};
 
@@ -48,6 +66,10 @@ const Form = () => {
 		setOpen(false);
 	};
 
+	const handleRecaptchaVerify = (token: string | null) => {
+		setRecaptchaToken(token);
+	};
+
 	const formVariants = {
 		hidden: { opacity: 0, y: 20 },
 		visible: { opacity: 1, y: 0 },
@@ -55,54 +77,6 @@ const Form = () => {
 
 	const formRef = useRef(null);
 	const isInView = useInView(formRef, { margin: '-10%' });
-
-	const textFieldStyles = {
-		'& .MuiInput-underline:before': {
-			borderBottomColor: '#dcdcdc',
-		},
-		'& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-			borderBottomColor: 'var(--emerald)',
-		},
-		'& .MuiInput-underline:after': {
-			borderBottomColor: 'var(--emerald)',
-		},
-		'& .MuiInputBase-input': {
-			color: '#fff',
-			backgroundColor: 'var(--background)',
-		},
-		'& .MuiFormLabel-root': {
-			color: '#fff',
-		},
-		'& .MuiFormLabel-root.Mui-focused': {
-			color: 'var(--emerald)',
-		},
-		'& .MuiInputBase-root.Mui-focused .MuiInputBase-input': {
-			backgroundColor: 'var(--background)',
-		},
-		'& .MuiInputBase-input.MuiFilledInput-input': {
-			backgroundColor: 'var(--background)',
-		},
-	};
-
-	const inputLabelProps = {
-		sx: {
-			color: '#fff',
-			'&.Mui-focused': {
-				color: 'var(--emerald)',
-			},
-		},
-	};
-
-	const buttonStyles = {
-		backgroundColor: 'var(--emerald)', // Neon yellow color
-		color: '#000', // Black text color
-		borderRadius: '30px', // Rounded corners
-		padding: '10px 20px', // Padding inside the button
-		textTransform: 'none', // Disable uppercase text transformation
-		'&:hover': {
-			backgroundColor: 'var(--emerald)', // Same color on hover to maintain consistency
-		},
-	};
 
 	return (
 		<Wrapper>
@@ -143,6 +117,7 @@ const Form = () => {
 							Reach Out
 						</Button>
 					</motion.div>
+					{submissionCount > 0 && <Recaptcha onVerify={handleRecaptchaVerify} />}
 				</StyledForm>
 			</motion.div>
 			<Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
