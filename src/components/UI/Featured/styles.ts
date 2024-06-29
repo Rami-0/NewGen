@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
 export const Wrapper = styled.section`
-    margin: 6.5rem 0;
+    margin: 8.5rem 0;
 `;
 
 export const Inner = styled.div`
@@ -22,12 +22,9 @@ export const Inner = styled.div`
   }
 
   @media (max-width: 768px) {
-    margin-top: 5rem;
-
     h2 {
       font-size: 1rem;
       font-weight: 500;
-      margin-top: 3.75rem;
     }
   }
 `;
