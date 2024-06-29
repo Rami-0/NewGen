@@ -11,7 +11,7 @@ import { useIsMobile } from '../../../../libs/useIsMobile';
 import { Props, desktopHeaderPhrase, testimonials } from './constants';
 
 const JoinSection = () => {
-  const text = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate, mollitia. Esse cumque molestiae voluptate deserunt ea laboriosam accusantium suscipit commodi et optio? Libero quos earum hic quaerat, ullam quibusdam. Voluptatem.'
+  const text = 'Nextgen transforms everyday challenges into opportunities for efficiency. Our cutting-edge products automate mundane tasks, save precious time, and simplify your life. Embrace the art of working smart and unlock your creative potential with solutions designed to elevate your workflow.'
   return (
     <Wrapper>
       <Inner>

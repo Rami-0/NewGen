@@ -8,10 +8,10 @@ export const Wrapper = styled.section`
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	margin-bottom: 10rem;
 `;
 
 export const Inner = styled.div`
-	background: url(${hero_background.src}) no-repeat;
 	display: flex;
 	flex-direction: column;
 	align-items: start;

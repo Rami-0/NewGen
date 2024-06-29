@@ -12,3 +12,4 @@ export { default as Footer } from './UI/Footer';
 export { default as Form } from './Common/Form';
 export { default as Preloader } from './UI/Preloader';
 export { default as MaskText } from './Common/MaskText';
+export { default as AnimatedGridBackground } from './Layout/AnimatedGridBackground';

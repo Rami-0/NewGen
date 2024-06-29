@@ -3,7 +3,6 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled.section`
-	margin-top: 8.56rem;
 	background: var(--emerald);
 `;
 

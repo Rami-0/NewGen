@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Wrapper, Inner, Pill, HeroTextContainer } from './styles';
 import ic_chevron_right from '../../../../public/svgs/ic_chevron_right.svg';
 import ic_myIcon from '../../../../public/my_svgs/Icon.svg';
-import { GetStartedButton } from '@/components';
+import { GetStartedButton, AnimatedGridBackground } from '@/components';
 import MaskText from '@/components/Common/MaskText';
 import { useIsMobile } from '../../../../libs/useIsMobile';
 import { mobileParagraphPhrases, mobilePhrases, paragraphPhrases, phrases } from './constants';
@@ -20,6 +20,7 @@ const HeroSection = () => {
 	}, []);
 
 	return (
+		<AnimatedGridBackground>
 		<Wrapper>
 			<Inner>
 				<Pill>
@@ -46,7 +47,6 @@ const HeroSection = () => {
 						) : (
 							<>
 								<MaskText phrases={phrases} tag='h1' />
-								<br />
 								<MaskText phrases={paragraphPhrases} tag='p' />
 								<motion.div
 									style={{
@@ -65,6 +65,7 @@ const HeroSection = () => {
 				<GetStartedButton padding='1rem 2rem' />
 			</Inner>
 		</Wrapper>
+		</AnimatedGridBackground>
 	);
 };
 
