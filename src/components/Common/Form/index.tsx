@@ -20,7 +20,7 @@ const Form = () => {
 	const [message, setMessage] = useState('');
 	const [severity, setSeverity] = useState<AlertColor>('success');
 	const [open, setOpen] = useState(false);
-	const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+	// const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 	const [isSubmitted, setIsSubmitted] = useState(false); // Track if the form is successfully submitted
 
 	const handleChange = (e: any) => {
@@ -34,17 +34,17 @@ const Form = () => {
 	const handleSubmit = async (e: any) => {
 		e.preventDefault();
 
-		if (!recaptchaToken) {
-			setMessage('Please complete the reCAPTCHA.');
-			setSeverity('error');
-			setOpen(true);
-			return;
-		}
+		// if (!recaptchaToken) {
+		// 	setMessage('Please complete the reCAPTCHA.');
+		// 	setSeverity('error');
+		// 	setOpen(true);
+		// 	return;
+		// }
 
 		try {
 			const response = await axios.post('/api/send-email', {
 				...formData,
-				recaptchaToken,
+				// recaptchaToken,
 			});
 			setMessage(response.data.message);
 			setSeverity('success');
@@ -63,9 +63,9 @@ const Form = () => {
 		setOpen(false);
 	};
 
-	const handleRecaptchaVerify = (token: string | null) => {
-		setRecaptchaToken(token);
-	};
+	// const handleRecaptchaVerify = (token: string | null) => {
+	// 	setRecaptchaToken(token);
+	// };
 
 	const formVariants = {
 		hidden: { opacity: 0, y: 20 },
@@ -103,9 +103,9 @@ const Form = () => {
 						<motion.div variants={formVariants} transition={{ duration: 0.5, delay: 0.4 }}>
 							<TextField id='description' label='Tell us more about your idea!' variant='standard' multiline rows={4} fullWidth value={formData.description} onChange={handleChange} required sx={textFieldStyles} InputLabelProps={inputLabelProps} />
 						</motion.div>
-						<div className='recaptcha-container'>
+						{/* <div className='recaptcha-container'>
 							<Recaptcha onVerify={handleRecaptchaVerify} />
-						</div>
+						</div> */}
 						<motion.div
 							style={{ width: 'fit-content', alignSelf: 'flex-end' }}
 							variants={formVariants}

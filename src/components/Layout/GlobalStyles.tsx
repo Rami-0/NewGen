@@ -23,7 +23,7 @@ export const GlobalStyles = styled.createGlobalStyle`
   body {
     max-width: 100vw;
     overflow-x: hidden;
-    font-family: 'SF Pro Display', sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
     background-color: var(--Background);
     color: var(--white);
     scroll-snap-type: y mandatory;
