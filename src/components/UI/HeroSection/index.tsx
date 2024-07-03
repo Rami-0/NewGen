@@ -17,9 +17,14 @@ const HeroSection = () => {
 	const [mounted, setMounted] = useState(false);
 	const [currentTopPhrase, setCurrentTopPhrase] = useState(0); // Track the current phrase index for TopPhrases
 	const [currentBottomPhrase, setCurrentBottomPhrase] = useState(0); // Track the current phrase index for BottomPhrases
+	const [start, setStart] = useState(false);
 
 	useEffect(() => {
+		const timeOut = setTimeout(() => {
+			setStart(true);
+		}, 4000);
 		setMounted(true);
+		return () => clearTimeout(timeOut);
 	}, []);
 
 	return (
@@ -37,11 +42,10 @@ const HeroSection = () => {
 									<MaskText tag='h1'>
 										{'Automate '}
 										<ReactTyped
-											strings={TopPhrases}
+											strings={start ? TopPhrases : ['']}
 											typeSpeed={200}
 											backSpeed={50}
 											loop
-											startDelay={4000} // 4 seconds delay before start
 											// backDelay={[2700, 1200]} // Adjusted for sync
 											backDelay={2000} // Adjusted for sync
 											onStringTyped={(index) => setCurrentTopPhrase(index)} // Update the state when a string is fully typed
@@ -50,11 +54,10 @@ const HeroSection = () => {
 									</MaskText>
 									<MaskText tag='h1'>
 										<ReactTyped
-											strings={BottomPhrases}
+											strings={start ? BottomPhrases : ['']}
 											typeSpeed={70}
 											backSpeed={50}
 											loop
-											startDelay={4000} // 4 seconds delay before start
 											// backDelay={[2160, 2040]} // Adjusted for sync
 											backDelay={2000} // Adjusted for sync
 											onStringTyped={(index) => setCurrentBottomPhrase(index)} // Update the state when a string is fully typed
@@ -77,7 +80,7 @@ const HeroSection = () => {
 									<MaskText tag='h1'>
 										{'Automate '}
 										<ReactTyped
-											strings={TopPhrases}
+											strings={start ? TopPhrases : ['']}
 											typeSpeed={200}
 											backSpeed={50}
 											loop
@@ -90,7 +93,7 @@ const HeroSection = () => {
 									</MaskText>
 									<MaskText tag='h1'>
 										<ReactTyped
-											strings={BottomPhrases}
+											strings={start ? BottomPhrases : ['']}
 											typeSpeed={60}
 											backSpeed={50}
 											loop

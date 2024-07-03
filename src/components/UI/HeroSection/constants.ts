@@ -1,3 +1,3 @@
 // For desktop
-export const TopPhrases = ['Today,', 'the Mundane,'];
-export const BottomPhrases = ['Simplify Tomorrow.', ' Unleash Creativity.'];
+export const TopPhrases : string[] = ['Today,', 'the Mundane,'];
+export const BottomPhrases : string[] = ['Simplify Tomorrow.', ' Unleash Creativity.'];
