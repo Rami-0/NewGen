@@ -43,6 +43,7 @@ export const Pill = styled.div`
 `;
 
 export const HeroTextContainer = styled.div`
+	min-width: 1000px;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
@@ -64,6 +65,7 @@ export const HeroTextContainer = styled.div`
 	}
 
 	@media (max-width: 768px) {
+		min-width: 100%;
 		gap: 1rem;
 		padding-bottom: 1.5rem;
 		h1 {

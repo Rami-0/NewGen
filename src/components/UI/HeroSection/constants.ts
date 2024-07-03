@@ -1,11 +1,3 @@
 // For desktop
-export const phrases = ['Automate Today,', 'Simplify Tomorrow.'];
-export const paragraphPhrases = [
-  "Nextgen: Automate the Mundane, Unleash Creativity.",
-];
-
-// For mobile
-export const mobilePhrases = ['Automate Today,', 'Simplify Tomorrow.'];
-export const mobileParagraphPhrases = [
-  "Nextgen: Automate the Mundane, Unleash Creativity.",
-];
+export const TopPhrases = ['Today,', 'the Mundane,'];
+export const BottomPhrases = ['Simplify Tomorrow.', ' Unleash Creativity.'];

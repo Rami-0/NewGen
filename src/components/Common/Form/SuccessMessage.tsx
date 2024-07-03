@@ -35,7 +35,6 @@ const SuccessMessage = () => (
       backSpeed={50}
       loop
       backDelay={2000}
-      shuffle={true}
     />
   </motion.div>
 );
