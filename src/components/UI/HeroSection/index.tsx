@@ -43,25 +43,13 @@ const HeroSection = () => {
 										{'Automate '}
 										<ReactTyped
 											strings={start ? TopPhrases : ['']}
-											typeSpeed={200}
+											typeSpeed={70}
 											backSpeed={50}
 											loop
 											// backDelay={[2700, 1200]} // Adjusted for sync
 											backDelay={2000} // Adjusted for sync
 											onStringTyped={(index) => setCurrentTopPhrase(index)} // Update the state when a string is fully typed
 											className={`typing-text-${currentTopPhrase}`} // Apply a dynamic class based on the current phrase index
-										/>
-									</MaskText>
-									<MaskText tag='h1'>
-										<ReactTyped
-											strings={start ? BottomPhrases : ['']}
-											typeSpeed={70}
-											backSpeed={50}
-											loop
-											// backDelay={[2160, 2040]} // Adjusted for sync
-											backDelay={2000} // Adjusted for sync
-											onStringTyped={(index) => setCurrentBottomPhrase(index)} // Update the state when a string is fully typed
-											className={`typing-text-${currentBottomPhrase}`} // Apply a dynamic class based on the current phrase index
 										/>
 									</MaskText>
 									<motion.div
@@ -81,27 +69,13 @@ const HeroSection = () => {
 										{'Automate '}
 										<ReactTyped
 											strings={start ? TopPhrases : ['']}
-											typeSpeed={200}
+											typeSpeed={70}
 											backSpeed={50}
 											loop
-											startDelay={4000} // 4 seconds delay before start
 											// backDelay={[2700, 1200]} // Adjusted for sync
 											backDelay={2000} // Adjusted for sync
 											onStringTyped={(index) => setCurrentTopPhrase(index)} // Update the state when a string is fully typed
 											className={`typing-text-${currentTopPhrase}`} // Apply a dynamic class based on the current phrase index
-										/>
-									</MaskText>
-									<MaskText tag='h1'>
-										<ReactTyped
-											strings={start ? BottomPhrases : ['']}
-											typeSpeed={60}
-											backSpeed={50}
-											loop
-											startDelay={4000} // 4 seconds delay before start
-											// backDelay={[2160, 2040]} // Adjusted for sync
-											backDelay={2000} // Adjusted for sync
-											onStringTyped={(index) => setCurrentBottomPhrase(index)} // Update the state when a string is fully typed
-											className={`typing-text-${currentBottomPhrase}`} // Apply a dynamic class based on the current phrase index
 										/>
 									</MaskText>
 									<motion.div

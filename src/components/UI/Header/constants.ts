@@ -21,10 +21,10 @@ export const menu = {
   },
 };
 export const links = [
-  {
-    url: '/',
-    linkTo: 'Solutions',
-  },
+  // {
+  //   url: '/',
+  //   linkTo: 'Solutions',
+  // },
   {
     url: '/',
     linkTo: 'Learn',

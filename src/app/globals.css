@@ -54,3 +54,6 @@ select:-webkit-autofill {
 .typing-text-0 {
   color: var(--emerald); /* Color for the second phrase */
 }
+.transition *{
+	transition: all 1s ease-in-out;
+}

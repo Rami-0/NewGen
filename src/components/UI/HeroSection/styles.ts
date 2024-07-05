@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 10rem;
+	height: 100vh;
 `;
 
 export const Inner = styled.div`
@@ -21,6 +22,7 @@ export const Inner = styled.div`
 	height: fit-content;
 	width: 90%;
 	max-width: 1440px;
+	transition: all 1s ease-in-out;
 `;
 
 export const Pill = styled.div`
@@ -44,6 +46,7 @@ export const Pill = styled.div`
 
 export const HeroTextContainer = styled.div`
 	min-width: 1000px;
+	max-width: 1050px;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
@@ -51,7 +54,6 @@ export const HeroTextContainer = styled.div`
 	position: relative;
 	justify-content: flex-start;
 	align-items: start;
-
 	h1 {
 		font-size: 6rem;
 		font-weight: 400;
