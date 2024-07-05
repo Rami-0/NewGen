@@ -56,7 +56,7 @@ const Footer = () => {
                   <h3>{l.title}</h3>
                   <LinksContainer>
                     {l.links.map((link, i) => (
-                      <li key={i}>{link}</li>
+                      <li className='disabled' key={i}>{link}</li>
                     ))}
                   </LinksContainer>
                 </GridColumn>

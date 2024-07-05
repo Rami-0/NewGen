@@ -54,6 +54,8 @@ select:-webkit-autofill {
 .typing-text-0 {
   color: var(--emerald); /* Color for the second phrase */
 }
-.transition *{
-	transition: all 1s ease-in-out;
+.disabled {
+	color: rgb(107, 107, 107) !important;
+	pointer-events: none;
+	/* cursor: not-allowed; */
 }
