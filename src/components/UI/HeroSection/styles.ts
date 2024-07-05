@@ -3,9 +3,9 @@ import { styled } from 'styled-components';
 import hero_background from '../../../../public/images/grid_background.png';
 
 export const Wrapper = styled.section`
-	padding: 15rem 0 15rem;
+	padding: 18rem 0 15rem;
 	display: flex;
-	justify-content: center;
+	// justify-content: center;
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 10rem;

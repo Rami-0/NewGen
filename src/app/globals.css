@@ -59,3 +59,21 @@ select:-webkit-autofill {
 	pointer-events: none;
 	/* cursor: not-allowed; */
 }
+
+.typed-container {
+	height: calc(2 * 8em); /* Adjust based on your line height */
+	line-height: 7em; /* Ensure this matches the line height of your text */
+}
+@media (max-width: 1100px) {
+	.typed-container {
+		height: calc(3 * 8em); /* Adjust based on your line height */
+		line-height: 7em; /* Ensure this matches the line height of your text */
+	}
+}
+
+@media (max-width: 767px) {
+	.typed-container {
+		height: calc(3 * 4em); /* Adjust based on your line height */
+		line-height: 4em; /* Ensure this matches the line height of your text */
+	}
+}

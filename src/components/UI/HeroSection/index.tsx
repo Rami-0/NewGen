@@ -22,7 +22,7 @@ const HeroSection = () => {
 	useEffect(() => {
 		const timeOut = setTimeout(() => {
 			setStart(true);
-		}, 4000);
+		}, 2000);
 		setMounted(true);
 		return () => clearTimeout(timeOut);
 	}, []);

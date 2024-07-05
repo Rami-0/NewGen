@@ -52,7 +52,7 @@ const MaskText: React.FC<MaskTextProps> = ({ phrases, tag, children }) => {
 				))
 			) : (
 				<LineMask>
-					<motion.div variants={animate} initial='initial' animate={isInView ? 'open' : ''} >
+					<motion.div className='typed-container' variants={animate} initial='initial' animate={isInView ? 'open' : ''} >
 					{tag === 'h1' && <h1>{children}</h1>}
 					{tag === 'h2' && <h2>{children}</h2>}
 					{tag === 'h3' && <h3>{children}</h3>}
